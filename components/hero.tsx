@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -123,15 +124,17 @@ export function Hero() {
 
         <div className="flex items-center justify-center lg:justify-end lg:col-span-5">
           <div className="entry-image-outer relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[440px] lg:h-[440px]">
-            <div
-              className="w-full h-full rounded-full border-4 border-border shadow-2xl bg-muted overflow-hidden group"
-              style={scrollY > 0 ? imageScrollStyle : undefined}
-            >
-              <img
-                src="/profilePic.png"
-                alt="D Tax and Law Lead Counsel Profile"
-                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              />
+              <div
+                className="relative w-full h-full rounded-full border-4 border-border shadow-2xl bg-muted overflow-hidden group"
+                style={scrollY > 0 ? imageScrollStyle : undefined}
+              >
+                <Image
+                  src="/profilePic.png"
+                  alt="D Tax and Law Lead Counsel Profile"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 440px"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
               <div className="absolute inset-0 rounded-full border border-white/10 pointer-events-none" />
             </div>
           </div>
