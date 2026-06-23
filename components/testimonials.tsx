@@ -23,7 +23,7 @@ export function Testimonials() {
           {reviews.map((rev, idx) => (
             <div key={idx} className="flex flex-col justify-between rounded-xl border border-border bg-muted/20 p-8 relative">
               <p className="text-base italic text-foreground leading-relaxed">
-                "{rev.quote}"
+                 {`"${rev.quote}"`}
               </p>
               <div className="mt-6 border-t border-border pt-4">
                 <p className="font-semibold text-sm text-foreground">{rev.author}</p>
