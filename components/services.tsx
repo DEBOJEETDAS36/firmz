@@ -39,7 +39,7 @@ export function Services() {
               className="group relative rounded-xl border border-border bg-background p-6 transition-all hover:shadow-md hover:border-foreground/20"
             >
               <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/80 block mb-4">
-                // {practice.type}
+                {practice.type}
               </span>
               <h3 className="text-xl font-semibold tracking-tight text-foreground group-hover:text-muted-foreground transition-colors">
                 {practice.title}
