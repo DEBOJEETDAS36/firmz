@@ -79,7 +79,7 @@ export function ContactUs() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <p className="text-lg font-semibold text-foreground">Message received.</p>
-                <p className="text-sm text-muted">We'll be in touch shortly.</p>
+                <p className="text-sm text-muted">We&apos;ll be in touch shortly.</p>
                 <button
                   onClick={() => setStatus("idle")}
                   className="mt-4 text-xs underline underline-offset-4 text-muted hover:text-foreground transition-colors"

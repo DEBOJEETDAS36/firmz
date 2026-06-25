@@ -113,7 +113,7 @@ export default function DashboardPage() {
           <div className="flex flex-col items-center justify-center py-32 text-center gap-2">
             <p className="text-foreground font-medium">No leads yet.</p>
             <p className="text-sm text-muted">
-              When someone fills the contact form, they'll appear here.
+              When someone fills the contact form, they&apos;ll appear here.
             </p>
           </div>
         )}
