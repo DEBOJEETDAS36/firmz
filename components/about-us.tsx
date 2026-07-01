@@ -11,10 +11,10 @@ export function AboutUs() {
               Where Legal Rigor Meets Financial Intelligence.
             </h2>
             <p className="mt-6 text-base text-muted-foreground leading-relaxed">
-              Founded on the principle that legal battles and financial triumphs are inherently linked, our multi-disciplinary firm eliminates communication silos. We design unified legal and financial strategies under a single roof.
+              We guide clients through constantly evolving legal and tax complexities with precision, foresight, and strategic expertise. Moving beyond basic compliance, we actively anticipate risks and optimize corporate opportunities to create sustainable value. Rooted in absolute confidentiality and transparency, our proactive corporate advisory aligns regulatory requirements with your broader business goals to deliver measurable, trust-based results.
             </p>
             <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-              Whether you are structuring a venture-backed enterprise or protecting personal generational wealth, our team provides clarity, discretion, and unyielding representation.
+              Our mission is to deliver exceptional legal and taxation advice that provides clarity, eliminates complexity, and empowers informed decision-making. We provide strategic, ethical, and forward-thinking solutions tailored precisely to your unique long-term objectives. Driven by integrity, precision, and accountability, our firm stands as a trusted partner of excellence and innovation, helping you navigate the modern regulatory landscape with absolute confidence.
             </p>
             
             <div className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-8">
