@@ -22,7 +22,6 @@ export function Services() {
     return () => observer.disconnect();
   }, []);
 
-  // Exact 20 practice areas extracted from image_e7bf5e.png
   const practices = [
     { num: "01", title: "Income tax" },
     { num: "02", title: "GST" },
@@ -49,8 +48,6 @@ export function Services() {
   return (
     <section id="services" ref={sectionRef} className="py-32 bg-background relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
-        {/* Typographic Header Section */}
         <div className="grid lg:grid-cols-12 gap-8 items-start border-b border-border pb-16 mb-20">
           <div className={`lg:col-span-5 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             <span className="text-[10px] font-mono tracking-[0.35em] uppercase text-muted-foreground/40 block mb-3">
@@ -67,7 +64,6 @@ export function Services() {
           </div>
         </div>
 
-        {/* Dynamic List Matrix with Enlarged Serif Typography */}
         <div className="grid gap-x-24 gap-y-0 md:grid-cols-2">
           {practices.map((practice, idx) => {
             const isCurrentHovered = hoveredIdx === idx;
@@ -84,14 +80,12 @@ export function Services() {
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 } ${isDimmed ? "opacity-15 scale-[0.99] blur-[0.4px]" : "opacity-100 scale-100"}`}
               >
-                {/* Fixed-Width Sharp Monospace Counter */}
                 <span className={`text-xs font-mono tracking-[0.2em] font-bold mr-8 transition-colors duration-300 ${
                   isCurrentHovered ? "text-foreground" : "text-muted-foreground/30"
                 }`}>
                   {practice.num}
                 </span>
 
-                {/* Upscaled Luxury Serif Core Content */}
                 <div className="flex-1 relative overflow-hidden">
                   <h3 className={`text-base sm:text-lg lg:text-xl tracking-wide transition-all duration-300 font-serif ${
                     isCurrentHovered 
@@ -102,7 +96,6 @@ export function Services() {
                   </h3>
                 </div>
 
-                {/* Minimalist End-Accent Anchor Geometry */}
                 <div className={`h-1 w-1 rounded-sm rotate-45 bg-foreground/80 transition-all duration-500 ease-out ${
                   isCurrentHovered ? "opacity-100 scale-120" : "opacity-0 scale-50"
                 }`} />
