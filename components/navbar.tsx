@@ -11,12 +11,19 @@ const NAV_LINKS = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-container items-center justify-between px-6 py-4">
-        <a href="#" className="text-lg font-semibold tracking-tight">
-          Firm Name
+      <nav className="mx-auto flex max-w-container items-center justify-between px-6 py-3">
+        
+        {/* Elegant Brand Identity using logo.png */}
+        <a href="#" className="flex items-center transition-opacity hover:opacity-90">
+          <img 
+            src="/logo.png" 
+            alt="D TAX AND LAW" 
+            className="h-12 w-auto object-contain" 
+          />
         </a>
 
-        <ul className="hidden items-center gap-8 text-sm text-muted md:flex">
+        {/* Navigation Menu */}
+        <ul className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="transition-colors hover:text-foreground">
@@ -26,6 +33,7 @@ export function Navbar() {
           ))}
         </ul>
 
+        {/* Utilities */}
         <div className="flex items-center gap-3">
           <ThemeToggle />
         </div>
