@@ -1,3 +1,5 @@
+import Image from "next/image"; // Imported at the top for layout optimization
+
 export function AboutUs() {
   return (
     <section id="about-us" className="py-24 bg-muted/30">
@@ -27,11 +29,26 @@ export function AboutUs() {
             </div>
           </div>
           
-          <div className="relative aspect-square lg:aspect-auto lg:h-[450px] w-full rounded-2xl border border-border bg-background flex items-center justify-center overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-muted to-transparent opacity-50" />
-            <div className="text-center p-6 z-10">
-              <span className="text-2xl font-serif italic text-muted-foreground block mb-2">In Integrity, Veritas.</span>
-              <p className="text-xs text-muted-foreground tracking-widest uppercase">Est. 2014</p>
+          {/* --- IMAGE DISPLAY BOX --- */}
+          <div className="relative aspect-square lg:aspect-auto lg:h-[450px] w-full rounded-2xl border border-border bg-background overflow-hidden group">
+            {/* Next.js Optimized Background Image */}
+            <Image
+              src="/dtax_body.jpg"             // Place your photo in the public folder and update this name
+              alt="Inside the firm office"
+              fill                              // Automatically stretches to fill the container layout
+              sizes="(max-w-7xl) 50vw, 100vw"   // Performance optimizer hinting responsive image width
+              className="object-cover transition-transform duration-500 group-hover:scale-105" // Subtle zoom effect on hover
+            />
+
+            {/* Dark Overlay Layer (Ensures your white text is highly readable over any bright background image) */}
+            <div className="absolute inset-0 bg-black/40 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+            {/* Text Positioned Directly on Top of the Image */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10">
+              <span className="text-2xl font-serif italic text-white block mb-2 drop-shadow-md">
+                In Integrity, Veritas.
+              </span>
+              <p className="text-xs text-zinc-300 tracking-widest uppercase drop-shadow-sm">Est. 2014</p>
             </div>
           </div>
         </div>
@@ -39,5 +56,3 @@ export function AboutUs() {
     </section>
   );
 }
-
-
