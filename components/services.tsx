@@ -51,7 +51,7 @@ export function Services() {
         <div className="grid lg:grid-cols-12 gap-8 items-start border-b border-border pb-16 mb-20">
           <div className={`lg:col-span-5 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
             <span className="text-[10px] font-mono tracking-[0.35em] uppercase text-muted-foreground/40 block mb-3">
-              // Legal & Fiscal Portfolio
+              {"// Legal & Fiscal Portfolio"}
             </span>
             <h2 className="text-4xl text-foreground sm:text-5xl lg:text-6xl font-serif font-normal tracking-wide leading-tight">
               Practice Areas
