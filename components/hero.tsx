@@ -98,9 +98,7 @@ export function Hero() {
             className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed entry-text"
             style={{ animationDelay: "400ms" }}
           >
-            Providing professional tax frameworks and dedicated legal services
-            in Bangaon. We safeguard financial growth and navigate complicated
-            corporate regulations with absolute precision.
+            Where precision, strategy and excellence define your legal and tax experiences
           </p>
 
           <div
