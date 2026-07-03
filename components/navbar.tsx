@@ -34,16 +34,44 @@ export function Navbar() {
           />
         </a>
 
-        {/* --- DESKTOP NAVIGATION (Hidden on mobile, flex on desktop) --- */}
-        <ul className="hidden items-center gap-8 text-sm text-muted md:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="transition-colors hover:text-foreground">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* --- DESKTOP NAVIGATION & CONTACT --- */}
+        <div className="hidden items-center gap-8 md:flex">
+          <ul className="flex items-center gap-8 text-sm text-muted">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="transition-colors hover:text-foreground">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Vertical Divider */}
+          <div className="h-4 w-px bg-border" />
+
+          {/* Desktop Contact Info */}
+          <div className="flex items-center gap-3 text-xs font-medium">
+            {/* Glowing Email */}
+            <a 
+              href="mailto:info@firmname.com" 
+              className="rounded-full border border-emerald-500/25 bg-emerald-500/5 px-3 py-1 text-emerald-600 dark:text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.15)] hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all duration-300"
+            >
+              info@firmname.com
+            </a>
+            
+            {/* Glowing Phone Number */}
+            <a 
+              href="tel:+15551234567" 
+              className="relative rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-600 dark:text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.25)] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300"
+            >
+              <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              +1 (555) 123-4567
+            </a>
+          </div>
+        </div>
 
         {/* --- RIGHT SIDE ACTIONS & HAMBURGER TOGGLE --- */}
         <div className="flex items-center gap-3">
@@ -71,21 +99,45 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* --- MOBILE NAVIGATION DROPDOWN (Visible only on mobile when isOpen is true) --- */}
+      {/* --- MOBILE NAVIGATION DROPDOWN --- */}
       {isOpen && (
-        <ul className="border-t border-border bg-background/95 px-6 py-4 flex flex-col gap-4 text-sm text-muted md:hidden animate-in fade-in slide-in-from-top-1 duration-200">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
+        <div className="border-t border-border bg-background/95 px-6 py-5 flex flex-col gap-5 md:hidden animate-in fade-in slide-in-from-top-1 duration-200">
+          <ul className="flex flex-col gap-4 text-sm text-muted">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a 
+                  href={link.href} 
+                  onClick={() => setIsOpen(false)} // Closes menu when user clicks a link
+                  className="block py-1 transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          
+          {/* Mobile Contact Info Separator & Links */}
+          <div className="border-t border-border/60 pt-4 flex flex-col gap-3 text-sm">
+            <div className="flex">
               <a 
-                href={link.href} 
-                onClick={() => setIsOpen(false)} // Closes menu when user clicks a link
-                className="block py-1 transition-colors hover:text-foreground"
+                href="mailto:info@firmname.com" 
+                className="inline-flex rounded-full border border-emerald-500/25 bg-emerald-500/5 px-4 py-1.5 font-medium text-emerald-600 dark:text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.15)]"
+                onClick={() => setIsOpen(false)}
               >
-                {link.label}
+                info@firmname.com
               </a>
-            </li>
-          ))}
-        </ul>
+            </div>
+            <div className="flex">
+              <a 
+                href="tel:+15551234567" 
+                className="inline-flex rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 font-medium text-emerald-600 dark:text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.2)]"
+                onClick={() => setIsOpen(false)}
+              >
+                +1 (555) 123-4567
+              </a>
+            </div>
+          </div>
+        </div>
       )}
     </header>
   );
