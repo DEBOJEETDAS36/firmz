@@ -59,7 +59,7 @@ export function ContactUs() {
               <div className="flex items-center gap-3">
                 <span className="font-medium text-foreground">Email:</span>
                 <a href="mailto:info@dtaxandlaw.com" className="hover:text-foreground transition-colors underline underline-offset-4">
-                  info@dtaxandlaw.com
+                  dtaxandlaw@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
