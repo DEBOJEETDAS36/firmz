@@ -53,22 +53,22 @@ export function Navbar() {
           <div className="flex items-center gap-3 text-xs font-medium">
             {/* Glowing Email */}
             <a 
-              href="mailto:info@firmname.com" 
+              href="mailto:dtaxandlaw@gmail.com" 
               className="rounded-full border border-emerald-500/25 bg-emerald-500/5 px-3 py-1 text-emerald-600 dark:text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.15)] hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all duration-300"
             >
-              info@firmname.com
+              dtaxandlaw@gmail.com
             </a>
             
             {/* Glowing Phone Number */}
             <a 
-              href="tel:+15551234567" 
+              href="tel:+91 76024 20029" 
               className="relative rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-600 dark:text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.25)] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300"
             >
               <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              +1 (555) 123-4567
+              +91 76024 20029
             </a>
           </div>
         </div>
@@ -120,20 +120,20 @@ export function Navbar() {
           <div className="border-t border-border/60 pt-4 flex flex-col gap-3 text-sm">
             <div className="flex">
               <a 
-                href="mailto:info@firmname.com" 
+                href="dtaxandlaw@gmail.com" 
                 className="inline-flex rounded-full border border-emerald-500/25 bg-emerald-500/5 px-4 py-1.5 font-medium text-emerald-600 dark:text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.15)]"
                 onClick={() => setIsOpen(false)}
               >
-                info@firmname.com
+                dtaxandlaw@gmail.com
               </a>
             </div>
             <div className="flex">
               <a 
-                href="tel:+15551234567" 
+                href="tel:+91 76024 20029" 
                 className="inline-flex rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 font-medium text-emerald-600 dark:text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.2)]"
                 onClick={() => setIsOpen(false)}
               >
-                +1 (555) 123-4567
+                +91 76024 20029
               </a>
             </div>
           </div>
