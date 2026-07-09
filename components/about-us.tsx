@@ -19,12 +19,12 @@ export function AboutUs() {
             
             <div className="mt-8 grid grid-cols-2 gap-6 border-t border-border pt-8">
               <div>
-                <p className="text-3xl font-bold text-foreground">99%</p>
+                <p className="text-3xl font-bold text-foreground">90%+</p>
                 <p className="text-sm text-muted-foreground mt-1">Client Retention Rate</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">Billion+</p>
-                <p className="text-sm text-muted-foreground mt-1">Assets Advisory & Managed</p>
+                <p className="text-3xl font-bold text-foreground">1000+</p>
+                <p className="text-sm text-muted-foreground mt-1">Clients served</p>
               </div>
             </div>
           </div>
