@@ -7,6 +7,7 @@ import { FAQ } from "@/components/faq";
 import { ContactUs } from "@/components/contact-us";
 import { LocationMap } from "@/components/location-map";
 import { Footer } from "@/components/footer";
+import { ChatBot } from "@/components/ChatBot";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ContactUs />
       <LocationMap />
       <Footer />
+      <ChatBot />
     </main>
   );
 }
