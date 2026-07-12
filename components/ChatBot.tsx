@@ -67,7 +67,7 @@ export function ChatBot() {
                                     Welcome to <strong>DTAX Law & Accountancy</strong>.
                                     <br />
                                     <br />
-                                    I'm your AI Assistant and can help you with legal,
+                                    I&apos;m your AI Assistant and can help you with legal,
                                     taxation, compliance, company registration, trademark
                                     registration, contract drafting, and other professional
                                     services.
