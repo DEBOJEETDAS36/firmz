@@ -18,6 +18,17 @@ const config: Config = {
       maxWidth: {
         container: "1200px",
       },
+      // Added marquee animation
+      animation: {
+        marquee: 'marquee 50s linear infinite',
+      },
+      // Added keyframes for seamless looping
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
   plugins: [],
