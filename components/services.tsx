@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 export function Services() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [clickedIdx, setClickedIdx] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -64,26 +65,39 @@ export function Services() {
 
         <div className="grid gap-x-24 gap-y-0 md:grid-cols-2">
           {practices.map((title, idx) => {
-            const isCurrentHovered = hoveredIdx === idx;
-            const isAnyHovered = hoveredIdx !== null;
-            const isDimmed = isAnyHovered && !isCurrentHovered;
+            const isHovered = hoveredIdx === idx;
+            const isClicked = clickedIdx === idx;
+            const isActive = isHovered || isClicked;
 
             return (
               <div
                 key={idx}
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
+                onClick={() => setClickedIdx(idx)}
                 style={{ transitionDelay: `${(idx % 2) * 40}ms` }}
-                className={`group flex items-center border-b border-border/30 py-7 cursor-default transition-all duration-500 ease-out transform ${
+                className={`group flex items-center border-b border-border/30 py-7 cursor-pointer transition-all duration-500 ease-out transform ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-                } ${isDimmed ? 'opacity-15 scale-[0.99] blur-[0.4px]' : 'opacity-100 scale-100'}`}
+                }`}
               >
                 <div className="flex-1 relative overflow-hidden">
-                  <h3 className={`text-base sm:text-lg lg:text-xl tracking-wide transition-all duration-300 font-serif ${isCurrentHovered ? 'text-foreground translate-x-2 font-normal italic' : 'text-foreground/90 font-normal'}`}>
+                  <h3 
+                    className={`text-base sm:text-lg lg:text-xl tracking-wide transition-all duration-300 font-serif ${
+                      isActive 
+                        ? 'text-primary translate-x-2 font-normal italic' 
+                        : 'text-foreground/90 font-normal'
+                    }`}
+                  >
                     {title}
                   </h3>
                 </div>
-                <div className={`h-1 w-1 rounded-sm rotate-45 bg-foreground/80 transition-all duration-500 ease-out ${isCurrentHovered ? 'opacity-100 scale-125' : 'opacity-0 scale-50'}`} />
+                <div 
+                  className={`h-1 w-1 rounded-sm rotate-45 transition-all duration-500 ease-out ${
+                    isActive 
+                      ? 'bg-primary opacity-100 scale-125' 
+                      : 'bg-foreground/80 opacity-0 scale-50'
+                  }`} 
+                />
               </div>
             );
           })}
