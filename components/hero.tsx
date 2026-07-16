@@ -1,36 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export function Hero() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const progress = Math.min(scrollY / 600, 1);
-
-  const textScrollStyle = {
-    transform: `translateY(${progress * -40}px)`,
-    opacity: 1 - progress * 0.6,
-    filter: `blur(${progress * 2}px)`,
-    transition:
-      "transform 0.05s ease-out, opacity 0.05s ease-out, filter 0.05s ease-out",
-  };
-
-  const imageScrollStyle = {
-    transform: `translateY(${progress * 90}px) scale(${1 - progress * 0.15})`,
-    opacity: 1 - progress * 0.85,
-    filter: `blur(${progress * 5}px)`,
-    transition:
-      "transform 0.05s ease-out, opacity 0.05s ease-out, filter 0.05s ease-out",
-  };
-
   return (
     <section
       id="hero"
@@ -73,10 +44,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-muted/50 via-background to-background -z-10" />
 
       <div className="mx-auto max-w-7xl grid gap-12 lg:grid-cols-12 items-center w-full py-12">
-        <div
-          className="text-left lg:col-span-7"
-          style={scrollY > 0 ? textScrollStyle : undefined}
-        >
+        <div className="text-left lg:col-span-7">
           <div className="entry-text" style={{ animationDelay: "100ms" }}>
             <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-6 tracking-wide">
               Tax Optimization & Legal Advocacy
@@ -122,17 +90,14 @@ export function Hero() {
 
         <div className="flex items-center justify-center lg:justify-end lg:col-span-5">
           <div className="entry-image-outer relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[440px] lg:h-[440px]">
-              <div
-                className="relative w-full h-full rounded-full border-4 border-border shadow-2xl bg-muted overflow-hidden group"
-                style={scrollY > 0 ? imageScrollStyle : undefined}
-              >
-                <Image
-                  src="/profilePic.png"
-                  alt="D Tax and Law Lead Counsel Profile"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, 440px"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
+            <div className="relative w-full h-full rounded-full border-4 border-border shadow-2xl bg-muted overflow-hidden group">
+              <Image
+                src="/profilePic.png"
+                alt="D Tax and Law Lead Counsel Profile"
+                fill
+                sizes="(max-width: 1024px) 50vw, 440px"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              />
               <div className="absolute inset-0 rounded-full border border-white/10 pointer-events-none" />
             </div>
           </div>
